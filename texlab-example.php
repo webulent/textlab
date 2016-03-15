@@ -12,7 +12,7 @@ use tlab\textLab as t;
 
 
 //example text
-$text = "hello @bulent_kocaman did you check #hepsiburada website for that url http://www.hepsiburada.com and ofcourse http://www.bulentkocaman.com/index.php?naber=iyilik so I said hello to you";
+$text = "hello @webulent this is your webpage http://www.bulentkocaman.com did you create a project on #github https://github.com/webulent/textlab Ok, so the #textlab is first example project on #github right?";
 
 
 //call the class
