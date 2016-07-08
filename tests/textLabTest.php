@@ -6,7 +6,7 @@
  * Date: 08.07.2016
  * Time: 18:53
  */
-require_once ('textLab.php');
+require_once (dirname(__FILE__).'/../textLab.php');
 use tlab\textLab as t;
 
 class textLabTest extends PHPUnit_Framework_TestCase
