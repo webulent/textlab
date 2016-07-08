@@ -12,16 +12,28 @@ namespace tcounter;
 //a trait
 trait textCounter{
     // Get words count from text
+    /**
+     * @return mixed
+     */
     public function wordsCount(){
         return str_word_count($this->content);
     }
 
     // Get letters count from text
+    /**
+     * @return int
+     */
     public function lettersCount(){
-        return mb_strlen($this->content);
+        if(extension_loaded('mb_strlen')){
+            return mb_strlen($this->content);
+        }
+        return strlen($this->content);
     }
 
     // Get words count one by one from text
+    /**
+     * @return array
+     */
     public function wordsCounter(){
         $array = array_unique(str_word_count($this->content,1));
         $result = array();
@@ -33,17 +45,26 @@ trait textCounter{
     }
 
     // Get url count from text
+    /**
+     * @return int
+     */
     public function urlCount(){
-        return count($this->getUrlFromText($this->content));
+        return count($this->getUrlFromText());
     }
 
     // Get # count from text
+    /**
+     * @return int
+     */
     public function tagCount(){
-        return count($this->getTagFromText($this->content));
+        return count($this->getTagFromText());
     }
 
-    // Get @ count from text
+    // Get (at) count from text
+    /**
+     * @return int
+     */
     public function atCount(){
-        return count($this->getAtFromText($this->content));
+        return count($this->getAtFromText());
     }
 }

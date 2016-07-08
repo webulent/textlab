@@ -29,11 +29,18 @@ class textLab
     public $content;
 
     //a construct
+    /**
+     * textLab constructor.
+     * @param $content
+     */
     public function __construct($content){
         $this->content = $content;
     }
 
     //get url list from text
+    /**
+     * @return array
+     */
     public function getUrlFromText(){
         $result = array();
         if (preg_match_all($this->regEx['url'], $this->content, $data)) {
@@ -45,6 +52,9 @@ class textLab
     }
 
     //get tag (#) list from text
+    /**
+     * @return array
+     */
     public function getTagFromText(){
         $result = array();
         if (preg_match_all($this->regEx['tag'], $this->content, $data)) {
@@ -56,6 +66,9 @@ class textLab
     }
 
     // get persons (@) from text
+    /**
+     * @return array
+     */
     public function getAtFromText(){
         $result = array();
         if (preg_match_all($this->regEx['at'], $this->content, $data)) {
@@ -66,6 +79,10 @@ class textLab
         return $result;
     }
 
+    /**
+     * @param string $type
+     * @return array|string
+     */
     public function getAllInformations($type = 'array'){
         $result = array(
             'letters'   => array(
@@ -95,6 +112,9 @@ class textLab
         return $result;
     }
 
+    /**
+     * @return mixed
+     */
     public function getWords(){
         return str_word_count($this->content,1);
     }
